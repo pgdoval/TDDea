@@ -1,0 +1,42 @@
+{
+  parserClass="idea.language.parser.TddParser"
+
+  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix="Tdd"
+  psiImplClassSuffix="Impl"
+  psiPackage="idea.language.psi"
+  psiImplPackage="idea.language.psi.impl"
+
+  elementTypeHolderClass="idea.language.psi.TddTypes"
+  elementTypeClass="idea.language.psi.TddElementType"
+  tokenTypeClass="idea.language.psi.TddTokenType"
+
+  psiImplUtilClass="idea.language.psi.impl.TddPsiImplUtil"
+
+
+  tokens = [
+    LEFT_BRACKET="["
+    RIGHT_BRACKET="]"
+    COMMA=","
+    DOT="."
+
+    space='regexp:\s+'
+    id="regexp:\w+"
+    string="regexp:('([^'\\]|\\.)*'|\"([^\"\\]|\\\"|\\\'|\\)*\")"
+    number="regexp:\d+"
+    line_comment="regexp://.*"
+    block_comment="regexp:/\*(.|\n)*\*/"
+    letter= "[a-zA-Z]"
+  ]
+}
+
+tddFile ::= (testcase|line_comment)*
+
+testcase ::= key status description methods
+
+key ::= LEFT_BRACKET number RIGHT_BRACKET
+status ::= LEFT_BRACKET letter RIGHT_BRACKET
+description ::= LEFT_BRACKET string RIGHT_BRACKET
+methods ::= LEFT_BRACKET (method (COMMA space? method)*)? RIGHT_BRACKET
+method ::= letter+ DOT letter+
