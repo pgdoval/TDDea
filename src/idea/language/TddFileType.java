@@ -27,7 +27,7 @@ public class TddFileType extends LanguageFileType {
     @NotNull
     @Override
     public String getDefaultExtension() {
-        return "simple";
+        return "tdd";
     }
 
     @Nullable

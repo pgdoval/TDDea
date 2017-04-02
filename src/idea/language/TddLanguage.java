@@ -11,6 +11,6 @@ public class TddLanguage extends Language {
     public static final TddLanguage INSTANCE = new TddLanguage();
 
     private TddLanguage() {
-        super("Simple");
+        super("Tdd");
     }
 }

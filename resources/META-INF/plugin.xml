@@ -27,6 +27,7 @@
   <extensions defaultExtensionNs="com.intellij">
     <!-- Add your extensions here -->
     <fileTypeFactory implementation="idea.language.TddFileTypeFactory"/>
+    <lang.parserDefinition language="Tdd" implementationClass="idea.language.TddParserDefinition"/>
   </extensions>
 
   <actions>

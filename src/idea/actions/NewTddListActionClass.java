@@ -20,22 +20,11 @@ import java.util.stream.Stream;
  * Created by pablo on 31/03/17.
  */
 public class NewTddListActionClass extends com.intellij.ide.actions.CreateFileAction {
-    //
-//    public NewTddListActionClass() {
-//        super("dddd", "eeeee", TddIcons.FILE);
-//    }
-//
-//    @Override
-//    protected void buildDialog(Project project, PsiDirectory directory, CreateFileFromTemplateDialog.Builder builder) {
-//        builder
-//                .setTitle("bbbbbb")
-//                .addKind("cccc", TddIcons.FILE, "Dddart File");
-//    }
-//
-//    @Override
-//    protected String getActionName(PsiDirectory psiDirectory, String s, String s1) {
-//        return "aaaaa";
-//    }
+
+    public NewTddListActionClass() {
+        super("dddd", "eeeee", TddIcons.FILE);
+    }
+
     @Override
     @NotNull
     protected PsiElement[] invokeDialog(final Project project, PsiDirectory directory) {
